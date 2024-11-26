@@ -178,7 +178,7 @@ nnGarrote <- function(x, y, intercept = TRUE,
     nng.beta <- nng.beta.temp
     rm(nng.beta.temp)
   } else{
-
+    nng.intercept <- NULL
       for(lambda.ind in 1:length(lambda.ind))
         nng.beta[,lambda.ind] <- nng.beta[, lambda.ind] * (sd(y)/apply(x, 2, sd))
   }
