@@ -111,9 +111,10 @@ nnGarrote <- function(x, y, intercept = TRUE,
   #
 
   # Centering and scaling data
-  x.s <- scale(x, center=TRUE, scale=TRUE)
-  y.s <- scale(y, center=TRUE, scale=TRUE)
-
+  #x.s <- scale(x, center=TRUE, scale=TRUE)
+  #y.s <- scale(y, center=TRUE, scale=TRUE)
+  x.s <- x
+  y.s <- y
   # Stop algorithm if LS intial estimate and p>n
   if(initial.model=="LS" && ncol(x.s)>nrow(x.s)){
     warning("Case where p variables greater than n observations. Option \"initial.model=glmnet\" will be enforced.")
